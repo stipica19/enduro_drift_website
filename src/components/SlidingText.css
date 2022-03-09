@@ -1,0 +1,42 @@
+.scroll-text {
+    background-color: transparent;
+    color: white;
+    font-family: helvetica;
+    text-transform: uppercase;
+    overflow-x: hidden;
+   
+    border-radius: 10px;
+  }
+  .scroll-text div {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    justify-content: space-between;
+    min-width: 100%;
+    margin-top: 110px;
+  }
+  .scroll-text div .news-message {
+    display: flex;
+    flex-shrink: 0;
+    height: 50px;
+    align-items: center;
+    animation: slide-left 10s linear infinite;
+  }
+
+
+  .scroll-text div .news-message p {
+    font-size: 1.0em;
+    font-weight: 100;
+    padding-left: 0.5em;
+  }
+  @keyframes slide-left {
+    from {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+  }
+ 

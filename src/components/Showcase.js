@@ -1,9 +1,10 @@
 import React from "react";
+import SlidingText from "./SlidingText";
 
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 const Showcase = () => {
   return (
     <section className="showcase">
+      <SlidingText />
       <div className="container grid">
         <div className="showcase-text">
           <h1>
@@ -12,16 +13,12 @@ const Showcase = () => {
           <p>
             <span>DRIFT</span> ON LIFE IS SHORT
           </p>
-          <div className="dugme">
-            <p>ENTER RACE</p>
+          <div className="date-form">
+            <input type="submit" value="BOOK NOW" className="btn btn-primary" />
           </div>
         </div>
       </div>
-      <div className="icon-bar">
-        <FaFacebook size={30} className={"facebook"} />
-        <FaInstagram size={30} className={"facebook"} />
-        <FaYoutube size={30} className={"facebook"} />
-      </div>
+
       <div className="poderano"></div>
     </section>
   );

@@ -3,14 +3,17 @@
   margin: 0 auto;
   overflow: auto;
   padding: 0 40px;
+ 
+
 }
 
 .card {
   background-color: #fff;
   color: #333;
- 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+
   margin: 10px;
+  z-index: 99;
 }
 
 .btn {
@@ -18,10 +21,7 @@
   padding: 10px 30px;
   cursor: pointer;
   font-weight: 700;
-  
   color: gray;
-  
-  
 }
 
 .btn-outline {
@@ -48,7 +48,7 @@
 
 .bg-dark,
 .btn-dark {
-  background-color: var(--dark-color);
+  background-color:#242424;;
   color: #fff;
 }
 
@@ -135,7 +135,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+
 }
 
 .grid {
@@ -145,7 +145,12 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  
 }
+.grid-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
 
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
@@ -236,19 +241,21 @@
 .icon-bar {
   display: flex;
   flex-direction: column;
- 
   position: fixed;
-
   top: 40%;
-  right: 0;
-  padding: 16px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  right: -22px;
+  padding: 0px;
+  z-index: 998;
+  background: rgba(28, 28, 28, 0.3);
+  border-radius: 50px 0px  0px 50px ;
 }
 .icon-bar .facebook {
   margin: 10px;
 }
 .icon-bar .facebook:hover {
   background-color: #000;
+}
+.icon-bar .fab{
+  margin: 20px;
+  color:white;
 }
