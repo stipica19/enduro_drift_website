@@ -20,6 +20,9 @@ import Contact from "./components/Contact";
 import SocialMedia from "./components/SocialMedia";
 import Termine from "./components/Termine";
 import Preloader from "./components/Preloader";
+import AdminDashboard from "./components/AdminDashboard";
+import AdminApply from "./components/AdminApply";
+import Login from "./components/Login";
 
 AOS.init();
 
@@ -45,6 +48,9 @@ function App() {
                 <Route path="/apply" element={<Apply />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/dates-2023" element={<Termine />} />
+                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/admin-apply/:id" element={<AdminApply />} />
+                <Route path="/login" element={<Login />} />
               </Routes>
             </div>
           </BrowserRouter>

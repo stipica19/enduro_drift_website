@@ -1,9 +1,10 @@
 import React from "react";
 import poderano from "../images/poderano.png";
-import slika from "../images/IMG_20220211_093342_106.jpg";
 import image1 from "../images/b1-min.png";
 import image3 from "../images/b3-min.png";
 import image2 from "../images/b2-min.png";
+import { Link } from "react-router-dom";
+
 const Tour = () => {
   return (
     <section className="tours bg-light  py-3">
@@ -20,15 +21,25 @@ const Tour = () => {
       <div className="container grid">
         <div>
           <h1>TOUR 1</h1>
-          <p>- 7 days -5 vozi </p>
+          <p>- 7 days </p>
           <p> - 690 € (with your motorcycle)</p>
-          <p> - 1000 € (rent a motorcycle)</p>
+          <p> - 990 € (rent a motorcycle)</p>
           <p> - included in the price: breakfast, bike wash, guide</p>
           <p>
             {" "}
             - additional payment: equipment rent, motorcycle wash, equipment
             wash, fuel
           </p>
+          <div className="date-form">
+            <Link to="/apply">
+              {" "}
+              <input
+                type="submit"
+                value="BOOK NOW"
+                className="btn btn-outline"
+              />
+            </Link>
+          </div>
         </div>
 
         <img
@@ -48,15 +59,18 @@ const Tour = () => {
         <div>
           <h1>TOUR 2</h1>
 
-          <p> - 5 dana boravak- 4 days vozi</p>
-          <p> - 500 € (with your motorcycle) </p>
-          <p> - 900 € (rent a motorcycle) </p>
+          <p> - 5 days </p>
+          <p> - 400 € (with your motorcycle) </p>
+          <p> - 700 € (rent a motorcycle) </p>
           <p> - included in the price: breakfast, guide</p>
           <p>
-            {" "}
             - additional payment: equipment rent, motorcycle wash, equipment
             wash, fuel
           </p>
+          <Link to="/apply">
+            {" "}
+            <input type="submit" value="BOOK NOW" className="btn btn-outline" />
+          </Link>
         </div>
       </div>
       <div className="container grid">
@@ -71,6 +85,10 @@ const Tour = () => {
             - additional payment: equipment rent, motorcycle wash, equipment
             wash, fuel
           </p>
+          <Link to="/apply">
+            {" "}
+            <input type="submit" value="BOOK NOW" className="btn btn-outline" />
+          </Link>
         </div>
         <img
           data-aos="fade-right"

@@ -36,7 +36,7 @@ const BestEnduro = () => {
           </p>
         </div>
 
-        <div className="grid-3 my-4 grid text-center">
+        <div className="grid-4 my-4 grid text-center">
           <div>
             <img
               src="https://visitbih.ba/wp-content/uploads/2019/09/VH-Vranica-Lo%C4%8Dika-2019-4.jpg"
@@ -58,6 +58,13 @@ const BestEnduro = () => {
               alt=""
             />
             <h4>Ramsko jezero</h4>
+          </div>
+          <div>
+            <img
+              src="https://crnibombarder.com/uploads/2020/10/1601915738-europski-zakon-mobilnosti-udruga-convoy.jpeg"
+              alt=""
+            />
+            <h4>Raduša</h4>
           </div>
         </div>
         <p>

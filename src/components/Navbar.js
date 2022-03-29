@@ -8,10 +8,11 @@ import gbFlag from "../images/flags/4x3/gb.svg";
 const Navbar = () => {
   const [menuClicked, setMenuClicked] = useState(false);
   const [navbar, setNavbar] = useState(false);
+  const [display, setDisplay] = useState(false);
 
   const changeBackground = () => {
     //console.log(window.scrollY);
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
     if (window.scrollY >= 66) {
       setNavbar(true);
     } else {
@@ -63,11 +64,37 @@ const Navbar = () => {
               APPLY
             </Link>
           </li>
-          <li className="navbar__item" onClick={toggleMenuClick}>
-            <Link className="navbar__link" to="/gallery">
+          <li className="navbar__item">
+            <span className="navbar__link" onClick={() => setDisplay(!display)}>
               GALLERY
-            </Link>
+            </span>
+            {display && (
+              <>
+                {" "}
+                <ul>
+                  <li>
+                    <Link
+                      className="navbar__link"
+                      to="/gallery"
+                      onClick={toggleMenuClick}
+                    >
+                      PHOTO
+                    </Link>
+                  </li>
+                  <li className="navbar__item">
+                    <Link
+                      className="navbar__link"
+                      to="/gallery"
+                      onClick={toggleMenuClick}
+                    >
+                      VIDEO
+                    </Link>
+                  </li>
+                </ul>
+              </>
+            )}
           </li>
+
           <li className="navbar__item" onClick={toggleMenuClick}>
             <Link className="navbar__link" to="/tour-guide">
               TOUR GUIDE

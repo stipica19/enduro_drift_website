@@ -27,6 +27,7 @@
 .btn-outline {
   background-color: transparent;
   border: 2px red solid;
+  color: white;
 }
 
 .btn:hover {
@@ -36,7 +37,7 @@
 /* Backgrounds & colored buttons */
 .bg-primary,
 .btn-primary {
-  background-color: #fff;
+  background-color: red;
   color: #fff;
 }
 
@@ -150,12 +151,23 @@
 .grid-1 {
   grid-template-columns: repeat(1, 1fr);
 }
-
-
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
-
+.grid-apply {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: start;
+  justify-content: center
+}
+.admin-grid{
+    display: grid;
+    grid-template-columns: 10% 1fr;
+}
+.apply .flex{
+  overflow-x: hidden;
+  max-width: 100%;
+}
 /* Margin */
 .my-1 {
   margin: 1rem 0;
@@ -255,7 +267,7 @@
 .icon-bar .facebook:hover {
   background-color: #000;
 }
-.icon-bar .fab{
+.icon-bar  .fab{
   margin: 20px;
   color:white;
 }

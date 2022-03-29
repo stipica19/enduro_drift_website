@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SlidingText from "./SlidingText";
 
 const Showcase = () => {
@@ -14,7 +15,13 @@ const Showcase = () => {
             <span>DRIFT</span> ON LIFE IS SHORT
           </p>
           <div className="date-form">
-            <input type="submit" value="BOOK NOW" className="btn btn-primary" />
+            <Link to="/apply">
+              <input
+                type="submit"
+                value="BOOK NOW"
+                className="btn btn-primary"
+              />
+            </Link>
           </div>
         </div>
       </div>
