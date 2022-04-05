@@ -281,11 +281,11 @@ const Apply = () => {
                   </div>
                 </div>
                 <div className="date-form">
-                  {" "}
                   <label htmlFor="DATE OF BIRTH">DATE OF BIRTH</label>
                   <DatePicker
                     selected={date_of_birth}
                     onChange={(date) => setSBirthDay(date)}
+                    className="date-pick"
                   />
                 </div>
                 <div className="date-form">
@@ -336,19 +336,21 @@ const Apply = () => {
                 </div>
 
                 <div className="date-form ">
-                  <label htmlFor="Renta a Bike">Renta a Bike </label>
-                  <input
-                    type="checkbox"
-                    name="Renta Bike"
-                    value="Renta Bike"
-                    checked={rentaBike}
-                    onChange={handeleRentaBike}
-                  />
+                  <div className="renta-bike">
+                    <label htmlFor="Renta a Bike">Renta a Bike </label>
+                    <input
+                      type="checkbox"
+                      name="Renta Bike"
+                      value="Renta Bike"
+                      checked={rentaBike}
+                      onChange={handeleRentaBike}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="date-form">
                 <label htmlFor="message">YOUR MESSAGE</label>
-                <div className="form-control">
+                <div className="form-control ">
                   <textarea
                     name="message"
                     id=""
@@ -358,8 +360,9 @@ const Apply = () => {
                   ></textarea>
                 </div>
               </div>
+
               <div className="date-form">
-                <div className="form-control">
+                <div className="form-control ">
                   <label htmlFor="ACCEPT TERMS AND CONDITIONS">
                     ACCEPT TERMS AND CONDITIONS
                   </label>

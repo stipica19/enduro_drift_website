@@ -1,18 +1,30 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../action/userAction";
 
 const Login = () => {
+  const navigate = useNavigate();
+  let location = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
 
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
+
+  const redirect = location.search ? location.search.split("=")[1] : "/";
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirect);
+    }
+  }, [redirect, navigate, userInfo]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:5000/api/users/login", {
-      email,
-      password,
-    });
-    console.log(response.data);
-    localStorage.setItem("user", JSON.stringify(response.data));
+    dispatch(login(email, password));
   };
   return (
     <section className="docs-main login">

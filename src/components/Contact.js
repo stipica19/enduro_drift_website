@@ -123,14 +123,13 @@ const Contact = () => {
                 </div>
               </div>
               <div className="date-form">
-                <div className="form-control flex">
-                  <label htmlFor="email">
+                <div className="form-control">
+                  <label htmlFor="spam">
                     SPAM CHECK {number1.current} + {number2.current}
                   </label>
                   <input
                     type="number"
                     name="spam"
-                    className="spam-check"
                     onChange={(e) => setSpamRez(Number(e.target.value))}
                     required
                   />

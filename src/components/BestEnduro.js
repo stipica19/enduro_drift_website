@@ -2,7 +2,7 @@ import React from "react";
 
 const BestEnduro = () => {
   return (
-    <section className="stats">
+    <section className="stats best-end">
       <div className="container">
         <h3 className="best-enduro text-center">
           THE BEST ENDURO TOURS IN BOSNIA AND HERZEGOVINA

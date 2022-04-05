@@ -24,11 +24,13 @@ import AdminDashboard from "./components/AdminDashboard";
 import AdminApply from "./components/AdminApply";
 import Login from "./components/Login";
 
+import ProtectedRoute from "./components/ProtectedRoute";
+
 AOS.init();
 
 function App() {
   const [loading, setLoading] = useState(true);
-  setTimeout(() => setLoading(false), 2000);
+  setTimeout(() => setLoading(false), 1500);
 
   return (
     <div className="">
@@ -48,9 +50,17 @@ function App() {
                 <Route path="/apply" element={<Apply />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/dates-2023" element={<Termine />} />
-                <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/admin-apply/:id" element={<AdminApply />} />
                 <Route path="/login" element={<Login />} />
+
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute>
+                      <AdminDashboard />
+                    </ProtectedRoute>
+                  }
+                />
               </Routes>
             </div>
           </BrowserRouter>

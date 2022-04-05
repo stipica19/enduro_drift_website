@@ -21,15 +21,18 @@ const Tour = () => {
       <div className="container grid">
         <div>
           <h1>TOUR 1</h1>
-          <p>- 7 days </p>
-          <p> - 690 € (with your motorcycle)</p>
-          <p> - 990 € (rent a motorcycle)</p>
-          <p> - included in the price: breakfast, bike wash, guide</p>
-          <p>
-            {" "}
-            - additional payment: equipment rent, motorcycle wash, equipment
-            wash, fuel
-          </p>
+          <p>- 7 Tage </p>
+          <p> - 690 € (mit eigenem Motorrad)</p>
+          <p> - 990 € (mit ein)</p>
+          <p> - von samstag bis samstag (mittwoch pausentag)</p>
+          <p> - leihmotorrad</p>
+          <p> - wasser </p>
+          <p> - guide</p>
+          <p> - Ausrüstung </p>
+          <p> - hotel </p>
+          <p> - Motorradwäsche</p>
+          <p> - Transport vom Flughafen und zurück </p>
+
           <div className="date-form">
             <Link to="/apply">
               {" "}
@@ -59,14 +62,17 @@ const Tour = () => {
         <div>
           <h1>TOUR 2</h1>
 
-          <p> - 5 days </p>
-          <p> - 400 € (with your motorcycle) </p>
-          <p> - 700 € (rent a motorcycle) </p>
-          <p> - included in the price: breakfast, guide</p>
-          <p>
-            - additional payment: equipment rent, motorcycle wash, equipment
-            wash, fuel
-          </p>
+          <p> - 5 Tage </p>
+          <p> - 400 € (mit eigenem Motorrad)</p>
+          <p> - 700 € (mit ein)</p>
+          <p> - von samstag bis samstag (mittwoch pausentag)</p>
+          <p> - leihmotorrad</p>
+          <p> - wasser </p>
+          <p> - guide</p>
+          <p> - Ausrüstung </p>
+          <p> - hotel </p>
+          <p> - Motorradwäsche</p>
+          <p> - Transport vom Flughafen und zurück </p>
           <Link to="/apply">
             {" "}
             <input type="submit" value="BOOK NOW" className="btn btn-outline" />
@@ -76,15 +82,17 @@ const Tour = () => {
       <div className="container grid">
         <div>
           <h1>TOUR 3</h1>
-          <p> - 5 days -3 vozi </p>
-          <p> - 540 € (with your motorcycle) </p>
-          <p> - 1040 € (rent a motorcycle) </p>
-          <p> - included in the price: breakfast, guide </p>
-          <p>
-            {" "}
-            - additional payment: equipment rent, motorcycle wash, equipment
-            wash, fuel
-          </p>
+          <p> - 3 Tage </p>
+          <p> - xxx € (mit eigenem Motorrad)</p>
+          <p> - xxx € (mit ein)</p>
+          <p> - von samstag bis samstag (mittwoch pausentag)</p>
+          <p> - leihmotorrad</p>
+          <p> - wasser </p>
+          <p> - guide</p>
+          <p> - Ausrüstung </p>
+          <p> - hotel </p>
+          <p> - Motorradwäsche</p>
+          <p> - Transport vom Flughafen und zurück </p>
           <Link to="/apply">
             {" "}
             <input type="submit" value="BOOK NOW" className="btn btn-outline" />

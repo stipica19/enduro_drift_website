@@ -4,11 +4,18 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import deFlag from "../images/flags/4x3/de.svg";
 import gbFlag from "../images/flags/4x3/gb.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../action/userAction";
 
 const Navbar = () => {
   const [menuClicked, setMenuClicked] = useState(false);
   const [navbar, setNavbar] = useState(false);
   const [display, setDisplay] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const changeBackground = () => {
     //console.log(window.scrollY);
@@ -28,6 +35,9 @@ const Navbar = () => {
 
   const toggleMenuClick = () => {
     setMenuClicked(!menuClicked);
+  };
+  const logoutHandler = () => {
+    dispatch(logout());
   };
 
   return (
@@ -49,9 +59,9 @@ const Navbar = () => {
           />
         )}
         <ul
-          className={
-            menuClicked ? "navbar__list navbar__list--active" : "navbar__list"
-          }
+          className={`${navbar ? "navbar__list  acitve" : "navbar__list"} ${
+            menuClicked ? "navbar__list  navbar__list--active" : "navbar__list"
+          }`}
         >
           <li className="navbar__item" onClick={toggleMenuClick}>
             <Link className="navbar__link" to="/">
@@ -74,7 +84,7 @@ const Navbar = () => {
                 <ul>
                   <li>
                     <Link
-                      className="navbar__link"
+                      className="navbar__linkk"
                       to="/gallery"
                       onClick={toggleMenuClick}
                     >
@@ -83,7 +93,7 @@ const Navbar = () => {
                   </li>
                   <li className="navbar__item">
                     <Link
-                      className="navbar__link"
+                      className="navbar__linkk"
                       to="/gallery"
                       onClick={toggleMenuClick}
                     >
@@ -115,6 +125,42 @@ const Navbar = () => {
               DATES 2023
             </Link>
           </li>
+          {userInfo && (
+            <li className="navbar__item">
+              <span
+                className="navbar__link"
+                onClick={() => setDisplay(!display)}
+              >
+                ADMIN
+              </span>
+              {display && (
+                <>
+                  {" "}
+                  <ul>
+                    <li>
+                      <Link
+                        className="navbar__linkk"
+                        to="/admin"
+                        onClick={toggleMenuClick}
+                      >
+                        ADMIN
+                      </Link>
+                    </li>
+                    <li className="navbar__item">
+                      <Link
+                        className="navbar__linkk"
+                        to="/"
+                        onClick={logoutHandler}
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                </>
+              )}
+            </li>
+          )}
+
           <li className="navbar__item" onClick={toggleMenuClick}>
             <a className="navbar__link " href="docs.html">
               <img src={deFlag} alt="deFlag" className="flags" />

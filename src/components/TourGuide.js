@@ -65,72 +65,15 @@ const TourGuide = () => {
           <div className="grid-inner">
             {imageMladen.map((item, index) => (
               <div className="item">
-                <div key={index} className="item-inner">
-                  <img
-                    src={item.link}
-                    alt={item.text}
-                    onClick={() => handleClick(item, index)}
-                  />
-                  <h2>{item.text}</h2>
+                <div key={index} className="">
+                  <img src={item.link} alt={item.text} />
                 </div>
               </div>
             ))}
-
-            <div>
-              {clickedImg && (
-                <Modal
-                  clickedImg={clickedImg}
-                  handelRotationRight={handelRotationRight}
-                  setClickedImg={setClickedImg}
-                  handelRotationLeft={handelRotationLeft}
-                />
-              )}
-            </div>
           </div>
         </div>
       </div>
     </section>
-
-    /*<section className="gallery tour-guide">
-      <div className="container grid">
-        <div className="tour-guide-text">
-          <h2>Mladen Brnas - leader of the leadership team</h2>
-          <p>
-            Head of our guide team is Mladen Brnas, a long-time experienced
-            enduro driver. Mladen is a participant of numerous enduro
-            competitions in Bosnia and Herzegovina, where he has achieved
-            remarkable results. Especially good result left on enduro races in
-            Visoko and Tomislavgrad. It is extremely kind and determined to give
-            our guests the pleasure of enduro driving.
-          </p>
-        </div>
-        <div className="grid-inner">
-          {data.map((item, index) => (
-            <div className="item">
-              <div key={index} className="item-inner">
-                <img
-                  src={item.link}
-                  alt={item.text}
-                  onClick={() => handleClick(item, index)}
-                />
-                <h2>{item.text}</h2>
-              </div>
-            </div>
-          ))}
-
-          <div>
-            {clickedImg && (
-              <Modal
-                clickedImg={clickedImg}
-                handelRotationRight={handelRotationRight}
-                setClickedImg={setClickedImg}
-                handelRotationLeft={handelRotationLeft}
-              />
-            )}
-          </div>
-        </div>
-      </div>
-    </section>*/
   );
 };
 

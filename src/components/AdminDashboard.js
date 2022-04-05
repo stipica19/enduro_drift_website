@@ -1,11 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import ToastBar from "./ToastBar";
 
 const AdminDashboard = () => {
   const [clicked, setClicked] = useState("rez");
   const [reviews, setReviews] = useState([]);
   const [applys, setApplys] = useState([]);
+  const [image, setImage] = useState("");
+  const [notification, setNotification] = useState({
+    message: "",
+    success: "",
+  });
+  const snackbarRef = useRef(null);
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   useEffect(() => {
     const getApplys = async () => {
@@ -34,8 +45,47 @@ const AdminDashboard = () => {
     axios.put(`http://localhost:5000/api/guestbook/${id}`, newArr[index]);
     setReviews(newArr);
   };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("image", image);
+
+    const config = {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = axios
+      .post("http://localhost:5000/api/index/addPhoto", formData, config, {
+        onUploadProgress: (progressEvent) => {
+          let { loaded, total } = progressEvent;
+          let procent = Math.floor((loaded * 100) / total);
+          console.log("aaa"`${loaded}`);
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setNotification(res.data);
+        snackbarRef.current.show();
+      })
+      .catch((err) => {
+        console.log(err);
+        setNotification(err);
+        snackbarRef.current.show();
+      });
+  };
+
   return (
     <section className="docs-main admin">
+      {snackbarRef ? (
+        <ToastBar ref={snackbarRef} notification={notification} />
+      ) : (
+        ""
+      )}
       <div className="grid-2 admin-grid ">
         <div className="card flex">
           <div className="card bg-light p-3">
@@ -158,8 +208,11 @@ const AdminDashboard = () => {
           ) : clicked === "photo" ? (
             <div>
               <h4>Dodaj sliku u galeriju</h4>
-              <form>
-                <input type="file" />
+              <form onSubmit={submitHandler}>
+                <input
+                  type="file"
+                  onChange={(e) => setImage(e.target.files[0])}
+                />
                 <input
                   type="submit"
                   value="SPREMI"

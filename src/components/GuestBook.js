@@ -107,7 +107,7 @@ const GuestBook = () => {
               </div>
               <div className="date-form">
                 <div className="form-control flex">
-                  <label htmlFor="email">
+                  <label htmlFor="spam">
                     SPAM CHECK {number1.current} + {number2.current}
                   </label>
                   <input

@@ -13,7 +13,7 @@ const Modal = ({
   return (
     <>
       <div className="overlay dismiss" onClick={handleClick}>
-        <img src={clickedImg} alt="bigger pic" />
+        <img src={`http://localhost:5000/${clickedImg}`} alt="bigger pic" />
         <span className="dismiss" onClick={handleClick}>
           X
         </span>
